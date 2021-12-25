@@ -3,14 +3,33 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AdminlayoutComponent } from './components/adminlayout/adminlayout.component';
+import { AdminheaderComponent } from './components/adminlayout/adminheader/adminheader.component';
+import { AdminfooterComponent } from './components/adminlayout/adminfooter/adminfooter.component';
+import { DashbordComponent } from './components/adminlayout/admin/dashbord/dashbord.component';
+import { LoginComponent } from './components/adminlayout/admin/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignupComponent } from './components/adminlayout/admin/signup/signup.component';
+import { EmployeeAddComponent } from './components/admin/employee-add/employee-add.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AdminlayoutComponent,
+    AdminheaderComponent,
+    AdminfooterComponent,
+    DashbordComponent,
+    LoginComponent,
+    SignupComponent,
+    EmployeeAddComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
