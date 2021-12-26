@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivateChild {
       let isLoggedIn = this.storageService.isLoggedIn();
       if(isLoggedIn){
       }else{
-        this.route.navigate(['/']);
+        this.route.navigate(['']);
         
       }
       return isLoggedIn;

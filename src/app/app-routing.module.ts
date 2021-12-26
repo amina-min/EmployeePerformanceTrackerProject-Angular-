@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EmployeeAddComponent } from './components/admin/employee-add/employee-add.component';
+import { HomeComponent } from './components/admin/home/home.component';
+import { ShowemployeeComponent } from './components/admin/showemployee/showemployee.component';
 import { DashbordComponent } from './components/adminlayout/admin/dashbord/dashbord.component';
 import { LoginComponent } from './components/adminlayout/admin/login/login.component';
 import { SignupComponent } from './components/adminlayout/admin/signup/signup.component';
@@ -12,7 +14,9 @@ const routes: Routes = [
   {path:'admin' , component:AdminlayoutComponent, canActivateChild: [AuthGuard], children:[
     {path:'dash', component: DashbordComponent},
     {path:'', component: DashbordComponent},
-    {path : "addemp" , component:EmployeeAddComponent}
+    {path : "addemp" , component:EmployeeAddComponent},
+    {path : "home" , component:HomeComponent},
+    {path : "show" , component:ShowemployeeComponent}
   ]},
   {path: 'signup', component: SignupComponent},  
 ];

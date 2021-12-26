@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './components/adminlayout/admin/signup/signup.component';
 import { EmployeeAddComponent } from './components/admin/employee-add/employee-add.component';
+import { HomeComponent } from './components/admin/home/home.component';
+import { ShowemployeeComponent } from './components/admin/showemployee/showemployee.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { EmployeeAddComponent } from './components/admin/employee-add/employee-a
     DashbordComponent,
     LoginComponent,
     SignupComponent,
-    EmployeeAddComponent
+    EmployeeAddComponent,
+    HomeComponent,
+    ShowemployeeComponent
   ],
   imports: [
     BrowserModule,

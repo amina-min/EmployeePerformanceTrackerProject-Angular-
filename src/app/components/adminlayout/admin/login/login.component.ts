@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     this.route.navigate(['admin']);
    }, err => {
      console.log(err);
-     this.route.navigate(['/']);
+     this.route.navigate(['']);
    })
   }
 
