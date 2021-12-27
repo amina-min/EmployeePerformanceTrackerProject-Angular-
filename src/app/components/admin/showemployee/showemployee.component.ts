@@ -13,13 +13,12 @@ export class ShowemployeeComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) {
     this.loadEmployee();
   }
-  Employees: any = [];
+  Employees: any ;
   isShowTable: boolean = false;
   isSave: boolean = true;
 
   ngOnInit(): void {
-
-
+    this.loadEmployee();
   }
 
 
@@ -31,18 +30,17 @@ export class ShowemployeeComponent implements OnInit {
 
   loadEmployee() {    
     const headers = { 'content-Type': 'application/json' };
-    this.http.post<any>('http://localhost:8080/employee/getAll', { headers: headers }).subscribe(employees => {
-      console.log(employees);
-      this.Employees = employees;
+    this.http.get<any>('http://localhost:9090/employee/getAll', { headers: headers }).subscribe(map => {
+      console.log(map.Data);
+      this.Employees = map.Data;
     })
   }
-
   getFormattedDate(ts:any){
 return new Date(ts).toLocaleDateString('en-BD')
   }
 
   editEmployee(employee: any) {
-    this.router.navigate(['home'],{state:{emp:employee, isSave:false}})    
+    this.router.navigate(['addemp'],{state:{emp:employee, isSave:false}})    
     this.employee.id = employee.id;
     this.employee.firstname = employee.firstname;
     this.employee.lastname = employee.lastname;
@@ -55,14 +53,16 @@ return new Date(ts).toLocaleDateString('en-BD')
     this.employee.employeementHistory = employee.employeementHistory;
   }
 
-  deleteEmployee(employee: any) {
-    
+  deleteEmployee(employee: any) {    
     const headers = { 'content-Type': 'application/json' };
-    this.http.get("http://localhost:8080/employee/delete/" + employee.id, { headers: headers })
+    this.http.get("http://localhost:9090/employee/delete/" + employee.id, { headers: headers })
       .subscribe(data => {
         console.log(data);
-        this.router.navigateByUrl("")
+        this.loadEmployee();
+        
       })
+
+
   }
 
 

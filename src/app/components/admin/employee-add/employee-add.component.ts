@@ -56,13 +56,11 @@ export class EmployeeAddComponent implements OnInit {
 
 
   saveEmployee() {
-   
-    
     this.router.navigateByUrl("list")
     this.submitted = true;
     console.log(this.employee.firstname);
     const headers = { 'content-Type': 'application/json' };
-    this.http.post<any>("http://localhost:8080/employee/saveEmployee", JSON.stringify(this.employee), { headers: headers })
+    this.http.post<any>("http://localhost:9090/employee/saveEmployee", JSON.stringify(this.employee), { headers: headers })
       .subscribe(data => {
         console.log(data);
       }
@@ -77,12 +75,10 @@ export class EmployeeAddComponent implements OnInit {
     console.log(this.isShowTable);
   }
 
-  updateEmployee() {    
-    
-    
+  updateEmployee() {   
     this.isSave = true;
     const headers = {'content-Type': 'application/json' };
-    this.http.post("http://localhost:8080/employee/update", JSON.stringify(this.employee), {headers: headers})
+    this.http.post("http://localhost:9090/employee/update", JSON.stringify(this.employee), {headers: headers})
       .subscribe(data => {
         console.log(data);
 

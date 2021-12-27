@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
   save() {
     this.submitted = true;
     const headers = { 'content-Type': 'application/json' };
-    this.http.post("http://localhost:8080/signup", JSON.stringify(this.user), { headers: headers }).subscribe(data => {
+    this.http.post("http://localhost:9090/signup", JSON.stringify(this.user), { headers: headers }).subscribe(data => {
       console.log(data);
     })
   }
