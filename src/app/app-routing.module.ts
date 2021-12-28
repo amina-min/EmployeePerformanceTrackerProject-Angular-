@@ -10,6 +10,7 @@ import { AdminlayoutComponent } from './components/adminlayout/adminlayout.compo
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
+  
   {path:'', component:LoginComponent},
   {path:'admin' , component:AdminlayoutComponent, canActivateChild: [AuthGuard], children:[
     {path:'dash', component: DashbordComponent},

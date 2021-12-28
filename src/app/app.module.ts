@@ -15,6 +15,7 @@ import { EmployeeAddComponent } from './components/admin/employee-add/employee-a
 import { HomeComponent } from './components/admin/home/home.component';
 import { ShowemployeeComponent } from './components/admin/showemployee/showemployee.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { ShowemployeeComponent } from './components/admin/showemployee/showemplo
     SignupComponent,
     EmployeeAddComponent,
     HomeComponent,
-    ShowemployeeComponent
+    ShowemployeeComponent,
+  
   ],
   imports: [
     BrowserModule,
