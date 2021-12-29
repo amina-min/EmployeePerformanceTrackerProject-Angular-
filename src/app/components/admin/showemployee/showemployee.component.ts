@@ -39,8 +39,7 @@ export class ShowemployeeComponent implements OnInit {
 return new Date(ts).toLocaleDateString('en-BD')
   }
 
-  editEmployee(employee: any) {
-    this.router.navigate(['addemp'],{state:{emp:employee, isSave:false}})    
+  editEmployee(employee: any) {       
     this.employee.id = employee.id;
     this.employee.firstname = employee.firstname;
     this.employee.lastname = employee.lastname;
@@ -51,6 +50,7 @@ return new Date(ts).toLocaleDateString('en-BD')
     this.employee.date_of_birth = employee.date_of_birth;
     this.employee.nationality = employee.nationality;
     this.employee.employeementHistory = employee.employeementHistory;
+    this.router.navigate(['/admin/addemp'],{state:{emp:employee, isSave:false}}) 
   }
 
   deleteEmployee(employee: any) {    

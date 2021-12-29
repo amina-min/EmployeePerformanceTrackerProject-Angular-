@@ -55,8 +55,7 @@ export class EmployeeAddComponent implements OnInit {
   }
 
 
-  saveEmployee() {
-    this.router.navigateByUrl("list")
+  saveEmployee() {    
     this.submitted = true;
     console.log(this.employee.firstname);
     const headers = { 'content-Type': 'application/json' };
@@ -65,6 +64,7 @@ export class EmployeeAddComponent implements OnInit {
         console.log(data);
       }
       )
+      this.router.navigateByUrl("/admin/show")
     
   }
 
@@ -84,7 +84,7 @@ export class EmployeeAddComponent implements OnInit {
 
       })
     this.employee = new Employee()
-      this.router.navigateByUrl("list");
+      this.router.navigateByUrl("/admin/show");
       this.submitted = true;
   }
 

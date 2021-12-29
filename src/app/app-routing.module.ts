@@ -8,6 +8,7 @@ import { LoginComponent } from './components/admin/login/login.component';
 import { SignupComponent } from './components/admin/signup/signup.component';
 import { AdminlayoutComponent } from './components/adminlayout/adminlayout.component';
 import { AuthGuard } from './guards/auth.guard';
+import { EmpmanageComponent } from './components/admin/empmanage/empmanage.component';
 
 const routes: Routes = [
   
@@ -17,7 +18,9 @@ const routes: Routes = [
     {path:'', component: DashbordComponent},
     {path : "addemp" , component:EmployeeAddComponent},
     {path : "home" , component:HomeComponent},
-    {path : "show" , component:ShowemployeeComponent}
+    {path : "show" , component:ShowemployeeComponent},
+    {path : "empmanage" , component:EmpmanageComponent}
+
   ]},
   {path: 'signup', component: SignupComponent},  
 ];

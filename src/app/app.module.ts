@@ -14,6 +14,7 @@ import { SignupComponent } from './components/admin/signup/signup.component';
 import { EmployeeAddComponent } from './components/admin/employee-add/employee-add.component';
 import { HomeComponent } from './components/admin/home/home.component';
 import { ShowemployeeComponent } from './components/admin/showemployee/showemployee.component';
+import { EmpmanageComponent } from './components/admin/empmanage/empmanage.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ShowemployeeComponent } from './components/admin/showemployee/showemplo
     EmployeeAddComponent,
     HomeComponent,
     ShowemployeeComponent,
+    EmpmanageComponent,
   
   ],
   imports: [
