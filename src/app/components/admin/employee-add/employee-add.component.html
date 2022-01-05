@@ -1,11 +1,13 @@
-<div class="content-wrapper" style="background-image: url(/assets/3.jpg); height: 100%;">
-    <div class="container-fluid px-1 py-5 mx-auto">
+<div class="content-wrapper" style="background-color: rgb(0, 95, 139);" >
+
+    <div class="container-fluid px-1 py-5 mx-auto ">
         <div class="row d-flex justify-content-center">
             <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
                 <p class="blue-text"></p>
                 <div class="card">
-                    <h1 style="text-align: center;">Employee Add </h1>
-               
+                    <div class="container cal-mt-5" style="width: 450px; ">
+                    <h2 style="text-align: center;" class="">Employee Add </h2>
+                    
                         <form [formGroup]="formGroup" (ngSubmit)="isSave? saveEmployee():updateEmployee()">
                             <div class=" form-group text-left">
                                 <label for="firstname" class="form-label">Firstname :</label>
@@ -119,13 +121,11 @@
                                 </div>
 
                             </div>
-                            <div>
 
-                                <button type="submit" class="btn btn-primary mt-2">{{ isSave? 'Save' :
-                                    'Update'}}</button>
-                            </div>
+                            <button type="submit" class="btn btn-primary mb-4">{{ isSave? 'Save' :
+                                'Update'}}</button>
                         </form>
-                   
+                    </div>
 
                 </div>
             </div>
