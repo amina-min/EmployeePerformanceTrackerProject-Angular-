@@ -43,13 +43,11 @@ export class EmployeeAddComponent implements OnInit {
   isSave: boolean = true;
 
   ngOnInit(): void {
- 
+    
     if(history.state.isSave!= undefined){
           this.employee = history.state.emp
      this.isSave =history.state.isSave
     }
-  
-    
   
 
   }
@@ -61,10 +59,10 @@ export class EmployeeAddComponent implements OnInit {
     const headers = { 'content-Type': 'application/json' };
     this.http.post<any>("http://localhost:9090/employee/saveEmployee", JSON.stringify(this.employee), { headers: headers })
       .subscribe(data => {
-        console.log(data);
+        console.log(data);        
       }
-      )
-      this.router.navigateByUrl("/admin/show")
+      )      
+      //this.router.navigate(["/admin/show"]);
     
   }
 
@@ -81,11 +79,21 @@ export class EmployeeAddComponent implements OnInit {
     this.http.post("http://localhost:9090/employee/update", JSON.stringify(this.employee), {headers: headers})
       .subscribe(data => {
         console.log(data);
-
       })
     this.employee = new Employee()
       this.router.navigateByUrl("/admin/show");
       this.submitted = true;
+  }
+
+
+  loadEmployee() {    
+    const headers = { 'content-Type': 'application/json' };
+    this.http.get<any>('http://localhost:9090/employee/getAll', { headers: headers }).subscribe(map => {
+      console.log(map.Data);
+      this.Employees = map.Data;
+      this.saveEmployee();
+      
+    })
   }
 
 
