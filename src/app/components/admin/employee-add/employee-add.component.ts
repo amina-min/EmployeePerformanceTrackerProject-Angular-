@@ -35,9 +35,6 @@ export class EmployeeAddComponent implements OnInit {
     return this.formGroup.controls;
   }
 
-
-
-
   Employees: any;
   isShowTable: boolean = false;
   isSave: boolean = true;
