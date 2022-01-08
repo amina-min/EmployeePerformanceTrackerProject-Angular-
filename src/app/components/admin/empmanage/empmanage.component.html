@@ -1,30 +1,36 @@
-<div class="content-wrapper" style="background-image: url(/assets/3.jpg); height: 100%; ">
+<div class="content-wrapper col-md-10" style=" height: auto;  width: 100%;">
     <div class="container-fluid px-1 py-5 mx-auto">
         <div class="row d-flex justify-content-center">
-            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <div class="col-xl-7 col-lg-8 col-md-12 col-11 text-center">
 
                 <p class="blue-text"></p>
                 <div class="card">
-                    <h2 style="color: rgba(86, 42, 92, 0.952); font-weight: unset;">Employee Performance Review
-                        Evaluation Form With Ratings</h2>
-                    <h5 class="text-center mb-4"></h5>
+                    <div style="background-color: rgba(88, 88, 88, 0.575);">
+                        <h2 style=" font-weight: unset; ">Employee Performance Review
+                            Evaluation Form With Ratings</h2>
+                        <h6>
+                            <p style="font-style: oblique;"> evaluate an employee, please carefully fill in the
+                                information below. Make sure we clearly
+                                understand your opinion, by providing examples and comments when submitting the Employee
+                                Evaluation form.</p>
+                        </h6>
+                    </div>
+                    <hr>
 
                     <form class="form-card" onsubmit="event.preventDefault()"
                         style="color: rgb(8, 0, 0); font-weight: unset;">
-                        <button class="btn btn-block" style="background-color:rgba(165, 135, 189, 0.575) ;">Employee
-                            Information</button>
+                        <p class="btn btn-block" style="background-color:rgba(88, 88, 88, 0.575) ;">Employee
+                            Information <span style="color: red;">*</span></p>
                         <label for=""></label>
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <input type="text" id="id" name="id" placeholder="Enter Id">
+                                <input type="text" id="id" name="id" placeholder="Enter Firstname">
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <input type="text" id="advertisingId" name="advertisingId" placeholder="Enter  name">
+                                <input type="text" id="advertisingId" name="advertisingId"
+                                    placeholder="Enter  Lasttname">
                             </div>
                         </div>
-
-
-
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <input type="text" id="id" name="id" placeholder="Enter Department">
@@ -34,9 +40,85 @@
                                     placeholder="Enter Degisnation">
                             </div>
                         </div>
+                        <hr>
 
-                        <button class="btn btn-block" style="background-color:rgba(165, 135, 189, 0.575) ; ">Employee
-                            Evaluation Details</button>
+                        <p class="btn btn-block" style="background-color:rgba(88, 88, 88, 0.575) ;">Rating Scale <span
+                                style="color: red;">*</span></p>
+                        <div style="text-align: left; font-size: large;" class="col-md-10">
+                            <p style="font-size: larger; font-weight: bold;"><br>Evaluate this employee using the
+                                following
+                                scale:</p>
+                            <p style="font-size:large;">5 - Consistently exceeds expectations<br>4 - Frequently exceeds
+                                expectations<br>3 - Meets expectations<br>2 - Sometimes meets expectations<br>1 - Rarely
+                                meets expectations</p>
+                        </div>
+                        <hr>
+
+
+                        <p class="btn btn-block" style="background-color:rgba(88, 88, 88, 0.575) ;">Job Knowledge
+                            <span style="color: red;">*</span>
+                        </p>
+
+                        <div style="text-align: left; font-size: large;" class="col-md-10">
+                            <p style="font-size: larger; font-weight: bold;"><br>Evaluate this employee in the following
+                                areas.</p>
+
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <div data-role="likert-header" placeholder="" data-size="full" data-colspan="11">
+                                    <div data-role="scale-column" id="likert-scale-column-00000013-0"
+                                        data-skip-markdown="true" data-i18n-text="control_label_216909_choice_0">1</div>
+                                    <div data-role="scale-column" id="likert-scale-column-00000013-1"
+                                        data-skip-markdown="true" data-i18n-text="control_label_216909_choice_1">2</div>
+                                    <div data-role="scale-column" id="likert-scale-column-00000013-2"
+                                        data-skip-markdown="true" data-i18n-text="control_label_216909_choice_2">3</div>
+                                    <div data-role="scale-column" id="likert-scale-column-00000013-3"
+                                        data-skip-markdown="true" data-i18n-text="control_label_216909_choice_3">4</div>
+                                    <div data-role="scale-column" id="likert-scale-column-00000013-4"
+                                        data-skip-markdown="true" data-i18n-text="control_label_216909_choice_4">5</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         <label for=""></label>
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
@@ -62,6 +144,10 @@
                             </div>
                         </div>
 
+
+
+                        <!-- <button class="btn btn-block" style="background-color:rgba(165, 135, 189, 0.575) ; ">Employee
+                            Evaluation Details</button> -->
 
 
                         <div class="row justify-content-between text-left">
