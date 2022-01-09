@@ -35,6 +35,8 @@ export class ShowemployeeComponent implements OnInit {
       this.Employees = map.Data;
     })
   }
+
+  
   getFormattedDate(ts:any){
 return new Date(ts).toLocaleDateString('en-BD')
   }
