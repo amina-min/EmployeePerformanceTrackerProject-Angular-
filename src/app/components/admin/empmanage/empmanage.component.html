@@ -15,24 +15,34 @@
                 </h6>
             </div>
             <hr>
-            <form class="form-card" onsubmit="event.preventDefault()" style="color: rgb(8, 0, 0); font-weight: unset;">
+            <form class="form-card" onsubmit="event.preventDefault()" style="color: rgb(8, 0, 0); font-weight: unset;"(ngSubmit)="save()" >
                 <h4 style="background-color:lightsteelblue ;">Employee Information <span style="color: red;">*</span>
                 </h4>
                 <label for=""></label>
                 <div class="row justify-content-between text-left">
                     <div class="form-group col-sm-6 flex-column d-flex">
-                        <input type="text" id="id" name="id" placeholder="Enter Firstname">
+                        <input type="text" id="firstname" name="firstname" [(ngModel)]="employeeRatings.firstname" placeholder="Enter Firstname">
                     </div>
                     <div class="form-group col-sm-6 flex-column d-flex">
-                        <input type="text" id="advertisingId" name="advertisingId" placeholder="Enter  Lasttname">
+                        <input type="text" id="lastname" name="lastname" [(ngModel)]="employeeRatings.lastname" placeholder="Enter  Lasttname">
                     </div>
                 </div>
                 <div class="row justify-content-between text-left">
-                    <div class="form-group col-sm-6 flex-column d-flex">
-                        <input type="text" id="id" name="id" placeholder="Enter Department">
+                    <div class="form-group col-sm-6 flex-column d-flex">                        
+                        <select name="department" id="department" [(ngModel)]="employeeRatings.department">
+                            <option value="-1">Select a department</option>
+                            <option value="General Management">General Management</option>
+                            <option value="Marketing Department">Marketing Department</option>
+                            <option value="Operations Department">Operations Department</option>
+                            <option value="Finance Department">Finance Department</option>
+                            <option value="Sales Department">Sales Department</option>
+                            <option value="Human Resource Department">Human Resource Department</option>
+                            <option value="Service Department">Service department</option>
+                            <option value="Information and Technollogy Department">Information and Technollogy Department</option>
+                        </select>
                     </div>
                     <div class="form-group col-sm-6 flex-column d-flex">
-                        <input type="text" id="advertisingId" name="advertisingId" placeholder="Enter Degisnation">
+                        <input type="text" id="designation" name="designation" [(ngModel)]="employeeRatings.designation" placeholder="Enter Designation">
                     </div>
                 </div>
                 <hr>
@@ -93,31 +103,27 @@
                         job requirements are understood:</label>
 
                     <div class="form-check form-check-inline" style="margin-left:40px;" >
-                        <input class="form-check-input" aria-checked="true" type="radio" name="flexRadioDefault2" id="flexRadioDefault1">
+                        <input class="form-check-input" aria-checked="true" type="radio" name="requirUnderstandingScore" id="requirUnderstandingScore" value="1" [(ngModel)]="employeeRatings.requirUnderstandingScore">
                         <label class="form-check-label" data-role="checkbox" role="radio" for="flexRadioDefault1">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="requirUnderstandingScore" id="requirUnderstandingScore" value="2" [(ngModel)]="employeeRatings.requirUnderstandingScore" >
                         <label class="form-check-label" data-role="checkbox" role="radio" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio"  name="requirUnderstandingScore" id="requirUnderstandingScore" value="3" [(ngModel)]="employeeRatings.requirUnderstandingScore" >
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="requirUnderstandingScore" id="requirUnderstandingScore" value="4" [(ngModel)]="employeeRatings.requirUnderstandingScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio"  name="requirUnderstandingScore" id="requirUnderstandingScore" value="5" [(ngModel)]="employeeRatings.requirUnderstandingScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
@@ -127,32 +133,27 @@
 
                 <div class="container text-left ">
 
-                    <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">He
-                        is on schedule regarding his training:</label>
+                    <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">He is on schedule regarding his training:</label>
 
                     <div class="form-check form-check-inline" style="margin-left:125px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio"  name="regardingTrainingScore" id="regardingTrainingScore" value="1" [(ngModel)]="employeeRatings.regardingTrainingScore">
                         <label class="form-check-label" for="flexRadioDefault1"> </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="regardingTrainingScore" id="regardingTrainingScore" value="2" [(ngModel)]="employeeRatings.regardingTrainingScore" >
                         <label class="form-check-label" for="flexRadioDefault2"></label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="regardingTrainingScore" id="regardingTrainingScore" value="3" [(ngModel)]="employeeRatings.regardingTrainingScore">
                         <label class="form-check-label" for="flexRadioDefault2"> </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="regardingTrainingScore" id="regardingTrainingScore" value="4" [(ngModel)]="employeeRatings.regardingTrainingScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio"name="regardingTrainingScore" id="regardingTrainingScore" value="5" [(ngModel)]="employeeRatings.regardingTrainingScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
@@ -168,31 +169,27 @@
                         capably:</label>
 
                     <div class="form-check form-check-inline" style="margin-left:93px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="equiSoftHandleScore" id="equiSoftHandleScore" value="1" [(ngModel)]="employeeRatings.equiSoftHandleScore">
                         <label class="form-check-label" for="flexRadioDefault1">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="equiSoftHandleScore" id="equiSoftHandleScore" value="2" [(ngModel)]="employeeRatings.equiSoftHandleScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="equiSoftHandleScore" id="equiSoftHandleScore" value="3" [(ngModel)]="employeeRatings.equiSoftHandleScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="equiSoftHandleScore" id="equiSoftHandleScore" value="4" [(ngModel)]="employeeRatings.equiSoftHandleScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="equiSoftHandleScore" id="equiSoftHandleScore" value="5" [(ngModel)]="employeeRatings.equiSoftHandleScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
@@ -208,31 +205,27 @@
                         properly:</label>
 
                     <div class="form-check form-check-inline" style="margin-left:120px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="rulsPolicyFolloScore" id="rulsPolicyFolloScore" value="1" [(ngModel)]="employeeRatings.rulsPolicyFolloScore">
                         <label class="form-check-label" for="flexRadioDefault1">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="rulsPolicyFolloScore" id="rulsPolicyFolloScore" value="2" [(ngModel)]="employeeRatings.rulsPolicyFolloScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio"name="rulsPolicyFolloScore" id="rulsPolicyFolloScore" value="3" [(ngModel)]="employeeRatings.rulsPolicyFolloScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio"name="rulsPolicyFolloScore" id="rulsPolicyFolloScore" value="4" [(ngModel)]="employeeRatings.rulsPolicyFolloScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="rulsPolicyFolloScore" id="rulsPolicyFolloScore" value="5" [(ngModel)]="employeeRatings.rulsPolicyFolloScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
@@ -246,31 +239,27 @@
                         shared with coworkers:</label>
 
                     <div class="form-check form-check-inline" style="margin-left:147px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="knoledgeShareWithCoworkersScore" id="knoledgeShareWithCoworkersScore" value="1" [(ngModel)]="employeeRatings.knoledgeShareWithCoworkersScore">
                         <label class="form-check-label" for="flexRadioDefault1">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="knoledgeShareWithCoworkersScore" id="knoledgeShareWithCoworkersScore" value="2" [(ngModel)]="employeeRatings.knoledgeShareWithCoworkersScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="knoledgeShareWithCoworkersScore" id="knoledgeShareWithCoworkersScore" value="3" [(ngModel)]="employeeRatings.knoledgeShareWithCoworkersScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="knoledgeShareWithCoworkersScore" id="knoledgeShareWithCoworkersScore" value="4" [(ngModel)]="employeeRatings.knoledgeShareWithCoworkersScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="knoledgeShareWithCoworkersScore" id="knoledgeShareWithCoworkersScore" value="5" [(ngModel)]="employeeRatings.knoledgeShareWithCoworkersScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
@@ -278,10 +267,8 @@
 
                 <br>
                 <div>
-                    <h4 style="font-weight:bold;  text-align: left;"><span style="font-family:Arial; ">Job
-                            Knowledge</span></h4>
-                    <p style="font-family:Arial;  text-align: left;"><span style="font-size:small;">Evaluate this
-                            employee in the following
+                    <h4 style="font-weight:bold;  text-align: left;"><span style="font-family:Arial; ">Job Knowledge</span></h4>
+                    <p style="font-family:Arial;  text-align: left;"><span style="font-size:small;">Evaluate this employee in the following
                             areas.</span></p>
                 </div>
                
@@ -294,10 +281,9 @@
                         <label for="floatingTextarea2" style="margin-left: 5px;">Comments:</label>                       
                     </div>
                     <div class="form-group " style="width: 85%; margin-right: 20px;">
-                        <textarea class="form-control" placeholder="Comment here" id="floatingTextarea2"></textarea>
+                        <textarea class="form-control" placeholder="Comment here" name="jobKnoledgeComment" id="jobKnoledgeComment"  [(ngModel)]="employeeRatings.jobKnoledgeComment"></textarea>
                     </div>
-                </div>
-               
+                </div>               
 
                 <br>
 
@@ -331,38 +317,33 @@
                     </div>
                 </div>
 
-
+                
 
                 <div class="container text-left ">
-
                     <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">Coworkers are treated with respect:</label>
 
                     <div class="form-check form-check-inline" style="margin-left:153px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="coworkersTreatedRespectScore" id="coworkersTreatedRespectScore" value="1" [(ngModel)]="employeeRatings.coworkersTreatedRespectScore">
                         <label class="form-check-label" for="flexRadioDefault1">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="coworkersTreatedRespectScore" id="coworkersTreatedRespectScore" value="2" [(ngModel)]="employeeRatings.coworkersTreatedRespectScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="coworkersTreatedRespectScore" id="coworkersTreatedRespectScore" value="3" [(ngModel)]="employeeRatings.coworkersTreatedRespectScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="coworkersTreatedRespectScore" id="coworkersTreatedRespectScore" value="4" [(ngModel)]="employeeRatings.coworkersTreatedRespectScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="coworkersTreatedRespectScore" id="coworkersTreatedRespectScore" value="5" [(ngModel)]="employeeRatings.coworkersTreatedRespectScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
@@ -375,31 +356,27 @@
                     <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">Accepts criticism when presented properly:</label>
 
                     <div class="form-check form-check-inline" style="margin-left:100px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault8" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="acceptsCriticismScore" id="acceptsCriticismScore" value="1" [(ngModel)]="employeeRatings.acceptsCriticismScore">
                         <label class="form-check-label" for="flexRadioDefault1">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault8" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="acceptsCriticismScore" id="acceptsCriticismScore" value="2" [(ngModel)]="employeeRatings.acceptsCriticismScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault8" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="acceptsCriticismScore" id="acceptsCriticismScore" value="3" [(ngModel)]="employeeRatings.acceptsCriticismScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault8" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="acceptsCriticismScore" id="acceptsCriticismScore" value="4" [(ngModel)]="employeeRatings.acceptsCriticismScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault8" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="acceptsCriticismScore" id="acceptsCriticismScore" value="5" [(ngModel)]="employeeRatings.acceptsCriticismScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
@@ -413,31 +390,27 @@
                     <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">Is a team player:</label>
 
                     <div class="form-check form-check-inline" style="margin-left:300px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault10" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="teamPlayerScore" id="teamPlayerScore" value="1" [(ngModel)]="employeeRatings.teamPlayerScore">
                         <label class="form-check-label" for="flexRadioDefault1">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault10" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio"  name="teamPlayerScore" id="teamPlayerScore" value="2" [(ngModel)]="employeeRatings.teamPlayerScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault10" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="teamPlayerScore" id="teamPlayerScore" value="3" [(ngModel)]="employeeRatings.teamPlayerScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault10" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="teamPlayerScore" id="teamPlayerScore" value="4" [(ngModel)]="employeeRatings.teamPlayerScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault10" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="teamPlayerScore" id="teamPlayerScore" value="5" [(ngModel)]="employeeRatings.teamPlayerScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
@@ -451,31 +424,27 @@
                     <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">Team resources are shared:</label>
 
                     <div class="form-check form-check-inline" style="margin-left:218px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault10" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="teameResourcesShareScore" id="teameResourcesShareScore" value="1" [(ngModel)]="employeeRatings.teameResourcesShareScore">
                         <label class="form-check-label" for="flexRadioDefault1">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault10" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="teameResourcesShareScore" id="teameResourcesShareScore" value="2" [(ngModel)]="employeeRatings.teameResourcesShareScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault10" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio"name="teameResourcesShareScore" id="teameResourcesShareScore" value="3" [(ngModel)]="employeeRatings.teameResourcesShareScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault10" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="teameResourcesShareScore" id="teameResourcesShareScore" value="4" [(ngModel)]="employeeRatings.teameResourcesShareScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault10" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="teameResourcesShareScore" id="teameResourcesShareScore" value="5" [(ngModel)]="employeeRatings.teameResourcesShareScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
@@ -489,31 +458,29 @@
                     <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">Executes his part of the task:</label>
 
                     <div class="form-check form-check-inline" style="margin-left:210px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault11" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio"  name="executesTaskScore" id="executesTaskScore" value="1" [(ngModel)]="employeeRatings.executesTaskScore">
                         <label class="form-check-label" for="flexRadioDefault1">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault11" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio"  name="executesTaskScore" id="executesTaskScore" value="2" [(ngModel)]="employeeRatings.executesTaskScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault11" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio"  name="executesTaskScore" id="executesTaskScore" value="3" [(ngModel)]="employeeRatings.executesTaskScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault11" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio"  name="executesTaskScore" id="executesTaskScore" value="4" [(ngModel)]="employeeRatings.executesTaskScore">
+                        
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault11" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio"  name="executesTaskScore" id="executesTaskScore" value="5" [(ngModel)]="employeeRatings.executesTaskScore">
+                            
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
@@ -524,7 +491,7 @@
                         <label for="floatingTextarea2" style="margin-left: 5px;">Comments:</label>                       
                     </div>
                     <div class="form-group " style="width: 85%; margin-right: 20px;">
-                        <textarea class="form-control" placeholder="Comment here" id="floatingTextarea2"></textarea>
+                        <textarea class="form-control" placeholder="Comment here" name="teamworkComment" id="teamworkComment"  [(ngModel)]="employeeRatings.teamworkComment"></textarea>
                     </div>
                 </div>
                
@@ -570,31 +537,27 @@
                     <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">Accepts his/her mistakes:</label>
 
                     <div class="form-check form-check-inline" style="margin-left:235px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault12" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="acceptsMistakeScore" id="acceptsMistakeScore" value="1" [(ngModel)]="employeeRatings.acceptsMistakeScore">
                         <label class="form-check-label" for="flexRadioDefault1">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault12" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio"  name="acceptsMistakeScore" id="acceptsMistakeScore" value="2" [(ngModel)]="employeeRatings.acceptsMistakeScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault12" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="acceptsMistakeScore" id="acceptsMistakeScore" value="3" [(ngModel)]="employeeRatings.acceptsMistakeScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault12" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio"  name="acceptsMistakeScore" id="acceptsMistakeScore" value="4" [(ngModel)]="employeeRatings.acceptsMistakeScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault12" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="acceptsMistakeScore" id="acceptsMistakeScore" value="5" [(ngModel)]="employeeRatings.acceptsMistakeScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
@@ -607,31 +570,27 @@
                     <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">Can work without being supervised all the time:</label>
 
                     <div class="form-check form-check-inline" style="margin-left:67px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault13" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio"name="canWorkWithoutSuperviseScore" id="canWorkWithoutSuperviseScore" value="1" [(ngModel)]="employeeRatings.canWorkWithoutSuperviseScore">
                         <label class="form-check-label" for="flexRadioDefault1">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault13" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="canWorkWithoutSuperviseScore" id="canWorkWithoutSuperviseScore" value="2" [(ngModel)]="employeeRatings.canWorkWithoutSuperviseScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault13" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="canWorkWithoutSuperviseScore" id="canWorkWithoutSuperviseScore" value="3" [(ngModel)]="employeeRatings.canWorkWithoutSuperviseScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault13" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="canWorkWithoutSuperviseScore" id="canWorkWithoutSuperviseScore" value="4" [(ngModel)]="employeeRatings.canWorkWithoutSuperviseScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault13" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="canWorkWithoutSuperviseScore" id="canWorkWithoutSuperviseScore" value="5" [(ngModel)]="employeeRatings.canWorkWithoutSuperviseScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
@@ -645,31 +604,27 @@
                     <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">Capable of taking difficult decisions:</label>
 
                     <div class="form-check form-check-inline" style="margin-left:152px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault14" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="capableTakingAnyDecisionScore" id="capableTakingAnyDecisionScore" value="1" [(ngModel)]="employeeRatings.capableTakingAnyDecisionScore">
                         <label class="form-check-label" for="flexRadioDefault1">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault14" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="capableTakingAnyDecisionScore" id="capableTakingAnyDecisionScore" value="2" [(ngModel)]="employeeRatings.capableTakingAnyDecisionScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault14" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="capableTakingAnyDecisionScore" id="capableTakingAnyDecisionScore" value="3" [(ngModel)]="employeeRatings.capableTakingAnyDecisionScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault14" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="capableTakingAnyDecisionScore" id="capableTakingAnyDecisionScore" value="4" [(ngModel)]="employeeRatings.capableTakingAnyDecisionScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault14" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="capableTakingAnyDecisionScore" id="capableTakingAnyDecisionScore" value="5" [(ngModel)]="employeeRatings.capableTakingAnyDecisionScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
@@ -683,31 +638,27 @@
                     <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">High pressure situations don't scare him/ her:</label>
 
                     <div class="form-check form-check-inline" style="margin-left:83px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault15" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="highPressureSiruationManageScore" id="highPressureSiruationManageScore" value="1" [(ngModel)]="employeeRatings.highPressureSiruationManageScore">
                         <label class="form-check-label" for="flexRadioDefault1">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault15" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="highPressureSiruationManageScore" id="highPressureSiruationManageScore" value="2" [(ngModel)]="employeeRatings.highPressureSiruationManageScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault15" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="highPressureSiruationManageScore" id="highPressureSiruationManageScore" value="3" [(ngModel)]="employeeRatings.highPressureSiruationManageScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault15" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="highPressureSiruationManageScore" id="highPressureSiruationManageScore" value="4" [(ngModel)]="employeeRatings.highPressureSiruationManageScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault15" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="highPressureSiruationManageScore" id="highPressureSiruationManageScore" value="5" [(ngModel)]="employeeRatings.highPressureSiruationManageScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
@@ -721,31 +672,27 @@
                     <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">Tries to motivate his/her coworkers to finish tasks:</label>
 
                     <div class="form-check form-check-inline" style="margin-left:50px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault0" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio"name="motivateCoworkersToFinishScore" id="motivateCoworkersToFinishScore" value="1" [(ngModel)]="employeeRatings.motivateCoworkersToFinishScore">
                         <label class="form-check-label" for="flexRadioDefault1">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault0" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio"name="motivateCoworkersToFinishScore" id="motivateCoworkersToFinishScore" value="2" [(ngModel)]="employeeRatings.motivateCoworkersToFinishScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault0" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="motivateCoworkersToFinishScore" id="motivateCoworkersToFinishScore" value="3" [(ngModel)]="employeeRatings.motivateCoworkersToFinishScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault0" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="motivateCoworkersToFinishScore" id="motivateCoworkersToFinishScore" value="4" [(ngModel)]="employeeRatings.motivateCoworkersToFinishScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
                     <div class="form-check form-check-inline" style="margin-left:27px;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault0" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="motivateCoworkersToFinishScore" id="motivateCoworkersToFinishScore" value="5" [(ngModel)]="employeeRatings.motivateCoworkersToFinishScore">
                         <label class="form-check-label" for="flexRadioDefault2">
                         </label>
                     </div>
@@ -756,7 +703,7 @@
                         <label for="floatingTextarea2" style="margin-left: 5px;">Comments:</label>                       
                     </div>
                     <div class="form-group " style="width: 85%; margin-right: 20px;">
-                        <textarea class="form-control" placeholder="Comment here" id="floatingTextarea2"></textarea>
+                        <textarea class="form-control" placeholder="Comment here" name="leadershipComment" id="leadershipComment" value="5" [(ngModel)]="employeeRatings.leadershipComment"></textarea>
                     </div>
                 </div>
                
@@ -772,14 +719,13 @@
                     <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">Is this employee eligible for promotion?: <samp style="color: red;">*</samp></label>
 
                     <div class="form-check form-check-inline" style="margin-left:83px;">
-                        <input class="form-check-input" type="radio" name="flex" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="isEligibleForPromotion" id="isEligibleForPromotion" value="1" [(ngModel)]="employeeRatings.isEligibleForPromotion">
                         <label class="form-check-label" for="flexRadioDefault1">Yes
                         </label>
                     </div>
                    <br>
                     <div class="form-check form-check-inline" style="margin-left:431px;">
-                        <input class="form-check-input" type="radio" name="flex" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="isEligibleForPromotion" id="isEligibleForPromotion" value="0" [(ngModel)]="employeeRatings.isEligibleForPromotion">
                         <label class="form-check-label" for="flexRadioDefault2" >No
                         </label>
                     </div>        
@@ -792,14 +738,13 @@
                     <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">Is this employee eligible for termination?: <samp style="color: red;">*</samp></label>
 
                     <div class="form-check form-check-inline" style="margin-left:77px;">
-                        <input class="form-check-input" type="radio" name="flex1" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="isEligibleForTermination" id="isEligibleForTermination" value="1" [(ngModel)]="employeeRatings.isEligibleForTermination">
                         <label class="form-check-label" for="flexRadioDefault1">Yes
                         </label>
                     </div>
                    <br>
                     <div class="form-check form-check-inline" style="margin-left:434px;">
-                        <input class="form-check-input" type="radio" name="flex1" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="isEligibleForTermination" id="isEligibleForTermination" value="0" [(ngModel)]="employeeRatings.isEligibleForTermination">
                         <label class="form-check-label" for="flexRadioDefault2" >No
                         </label>
                     </div>        
@@ -813,7 +758,7 @@
                         <label for="floatingTextarea2" style="margin-left: 5px;">Extra Comments:</label>                       
                     </div>
                     <div class="form-group " style="width: 80%; margin-right: 20px;">
-                        <textarea class="form-control" placeholder="Comment here" id="floatingTextarea2"></textarea>
+                        <textarea class="form-control" placeholder="Comment here" name="extraComments" id="extraComments" value="false" [(ngModel)]="employeeRatings.extraComments"></textarea>
                     </div>
                 </div>
 
@@ -898,7 +843,8 @@
 
 
                 <div class=" container row justify-content-end "  >
-                    <div class="form-group col-sm-6"> <button type="submit"  class="btn-block  btn-lg  btn-outline" >Send</button>
+                    <div class="form-group col-sm-6"> 
+                        <button type="submit"  class="btn-block  btn-lg  btn-outline" >Send</button>
                     </div>
                 </div >
 
