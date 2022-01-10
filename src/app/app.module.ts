@@ -18,6 +18,10 @@ import { EmpmanageComponent } from './components/admin/empmanage/empmanage.compo
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { EmployeelayoutComponent } from './components/employee/employeelayout/employeelayout.component';
+import { EmployeeheaderComponent } from './components/employee/employeelayout/employeeheader/employeeheader.component';
+import { EmployeefooterComponent } from './components/employee/employeelayout/employeefooter/employeefooter.component';
+import { EmployeehomeComponent } from './components/employee/employeehome/employeehome.component';
 
 
 @NgModule({
@@ -33,6 +37,10 @@ import { ToastrModule } from 'ngx-toastr';
     HomeComponent,
     ShowemployeeComponent,
     EmpmanageComponent,
+    EmployeelayoutComponent,
+    EmployeeheaderComponent,
+    EmployeefooterComponent,
+    EmployeehomeComponent,
   
   ],
   imports: [

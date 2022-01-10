@@ -51,18 +51,23 @@ export class EmployeeAddComponent implements OnInit {
   }
 
 
-  saveEmployee() {    
+  saveEmployee() {
+    if(this.formGroup.invalid){
+      this.toastr.error("save failed")
+
+
+    }else{    
     this.submitted = true;
     console.log(this.employee.firstname);
     const headers = { 'content-Type': 'application/json' };
     this.http.post<any>("http://localhost:9090/employee/saveEmployee", JSON.stringify(this.employee), { headers: headers })
       .subscribe(data => {
         console.log(data); 
-        this.toastr.success( "Employee add cmpleate") ;       
+        this.toastr.success( "save successfull") ;       
       }
       )      
       //this.router.navigate(["/admin/show"]);
-    
+    }
   }
 
 
