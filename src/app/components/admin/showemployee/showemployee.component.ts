@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Employee } from '../employee-add/employee.model';
 
 @Component({
@@ -10,7 +11,7 @@ import { Employee } from '../employee-add/employee.model';
 })
 export class ShowemployeeComponent implements OnInit {
   employee: Employee = new Employee();
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router,private toastr:ToastrService) {
     this.loadEmployee();
   }
   Employees: any ;
@@ -61,7 +62,7 @@ return new Date(ts).toLocaleDateString('en-BD')
       .subscribe(data => {
         console.log(data);
         this.loadEmployee();
-        
+        this.toastr.warning( "Employee delete") ;
       })
 
 

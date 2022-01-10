@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Employee } from './employee.model';
 
 @Component({
@@ -13,7 +14,7 @@ export class EmployeeAddComponent implements OnInit {
   employee: Employee = new Employee();
   formGroup: FormGroup;
   submitted = false;
-  constructor(private fb: FormBuilder, private router: Router, private http: HttpClient ) {
+  constructor(private fb: FormBuilder, private router: Router, private http: HttpClient, private toastr: ToastrService ) {
     this.formGroup = this.fb.group(
       {
         firstname: ['', [Validators.required]],
@@ -56,7 +57,8 @@ export class EmployeeAddComponent implements OnInit {
     const headers = { 'content-Type': 'application/json' };
     this.http.post<any>("http://localhost:9090/employee/saveEmployee", JSON.stringify(this.employee), { headers: headers })
       .subscribe(data => {
-        console.log(data);        
+        console.log(data); 
+        this.toastr.success( "Employee add cmpleate") ;       
       }
       )      
       //this.router.navigate(["/admin/show"]);
@@ -78,8 +80,9 @@ export class EmployeeAddComponent implements OnInit {
         console.log(data);
       })
     this.employee = new Employee()
-      this.router.navigateByUrl("/admin/show");
-      this.submitted = true;
+      // this.router.navigateByUrl("/admin/show");
+      // this.submitted = true;
+      this.toastr.info("Employee Update Compleate")
   }
 
 
@@ -88,11 +91,10 @@ export class EmployeeAddComponent implements OnInit {
     this.http.get<any>('http://localhost:9090/employee/getAll', { headers: headers }).subscribe(map => {
       console.log(map.Data);
       this.Employees = map.Data;
-      this.saveEmployee();
+      
       
     })
   }
-
 
 
 }

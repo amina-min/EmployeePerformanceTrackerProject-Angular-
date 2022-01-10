@@ -15,6 +15,9 @@ import { EmployeeAddComponent } from './components/admin/employee-add/employee-a
 import { HomeComponent } from './components/admin/home/home.component';
 import { ShowemployeeComponent } from './components/admin/showemployee/showemployee.component';
 import { EmpmanageComponent } from './components/admin/empmanage/empmanage.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { EmpmanageComponent } from './components/admin/empmanage/empmanage.compo
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

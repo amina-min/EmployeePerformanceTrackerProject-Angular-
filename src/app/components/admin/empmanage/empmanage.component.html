@@ -29,7 +29,7 @@
                 </div>
                 <div class="row justify-content-between text-left">
                     <div class="form-group col-sm-6 flex-column d-flex">                        
-                        <select name="department" id="department" [(ngModel)]="employeeRatings.department">
+                        <select name="department" id="department" [(ngModel)]="employeeRatings.department" style="height: 30px;">
                             <option value="-1">Select a department</option>
                             <option value="General Management">General Management</option>
                             <option value="Marketing Department">Marketing Department</option>
@@ -719,13 +719,13 @@
                     <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">Is this employee eligible for promotion?: <samp style="color: red;">*</samp></label>
 
                     <div class="form-check form-check-inline" style="margin-left:83px;">
-                        <input class="form-check-input" type="radio" name="isEligibleForPromotion" id="isEligibleForPromotion" value="1" [(ngModel)]="employeeRatings.isEligibleForPromotion">
+                        <input class="form-check-input" type="radio" name="isEligibleForPromotion" id="isEligibleForPromotion" value="yes" [(ngModel)]="employeeRatings.isEligibleForPromotion">
                         <label class="form-check-label" for="flexRadioDefault1">Yes
                         </label>
                     </div>
                    <br>
                     <div class="form-check form-check-inline" style="margin-left:431px;">
-                        <input class="form-check-input" type="radio" name="isEligibleForPromotion" id="isEligibleForPromotion" value="0" [(ngModel)]="employeeRatings.isEligibleForPromotion">
+                        <input class="form-check-input" type="radio" name="isEligibleForPromotion" id="isEligibleForPromotion" value="no" [(ngModel)]="employeeRatings.isEligibleForPromotion">
                         <label class="form-check-label" for="flexRadioDefault2" >No
                         </label>
                     </div>        
@@ -738,13 +738,13 @@
                     <label class="form-control-label px-3" style="text-align: left; font-size: 17px; ">Is this employee eligible for termination?: <samp style="color: red;">*</samp></label>
 
                     <div class="form-check form-check-inline" style="margin-left:77px;">
-                        <input class="form-check-input" type="radio" name="isEligibleForTermination" id="isEligibleForTermination" value="1" [(ngModel)]="employeeRatings.isEligibleForTermination">
+                        <input class="form-check-input" type="radio" name="isEligibleForTermination" id="isEligibleForTermination" value="yes" [(ngModel)]="employeeRatings.isEligibleForTermination">
                         <label class="form-check-label" for="flexRadioDefault1">Yes
                         </label>
                     </div>
                    <br>
                     <div class="form-check form-check-inline" style="margin-left:434px;">
-                        <input class="form-check-input" type="radio" name="isEligibleForTermination" id="isEligibleForTermination" value="0" [(ngModel)]="employeeRatings.isEligibleForTermination">
+                        <input class="form-check-input" type="radio" name="isEligibleForTermination" id="isEligibleForTermination" value="no" [(ngModel)]="employeeRatings.isEligibleForTermination">
                         <label class="form-check-label" for="flexRadioDefault2" >No
                         </label>
                     </div>        

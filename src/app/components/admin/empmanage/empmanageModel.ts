@@ -26,8 +26,8 @@ export class EmployeeRatings{
     motivateCoworkersToFinishScore:number= 0;
     leadershipComment:string ="";
 
-    isEligibleForPromotion:boolean= false;
-    isEligibleForTermination:boolean= false;
+    isEligibleForPromotion:string= "";
+    isEligibleForTermination:string= "";
     extraComments:string ="";
     
     
