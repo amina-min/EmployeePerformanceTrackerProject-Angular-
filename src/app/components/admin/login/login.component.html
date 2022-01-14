@@ -1,24 +1,24 @@
 <!-- Button to open the modal login form -->
 <button onclick="document.getElementById('id01').style.display='block'">Login</button>
 
+
 <div>
   <img style="width: 1340px; " src="/assets/images/aaaa.jpg" />
 </div>
 
 <div id="id01" class="modal" style="height: 600px; " >
 
-  <form class="modal-content animate col-lg-8" action="/action_page.php" method="post" [formGroup]="formGroup"
-    (ngSubmit)="onSubmit()" style="width: 500px;  ">
+  <form class="modal-content animate col-lg-8"  [formGroup]="formGroup"  style="width: 500px;  ">
     
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close"
         title="Close Modal">&times;</span>
       <img src="/assets/images/icon.png" >
-      <h3>User Login</h3>
+      <h3>Login</h3>
     </div>
 
     <div class="container" style="width: 500px; ">
-      <label for="uname"><b>Username</b></label>
+      <label for="uname"><b>Email</b></label>
       <div class="input-group mb-3">
         <input type="email" class="form-control" name="email" id="email" formControlName="email" placeholder="Enter Your Email">
                 
@@ -43,7 +43,8 @@
       </div> 
       <div class="social-auth-links text-center mt-2 mb-3">     
         <p class="mb-0">
-          <button type="submit" class="btn btn-success active ">Login</button>
+          <button (click)="adminLogin()" type="submit" class="btn btn-success active ">admin Login</button>
+          <button (click)="employeeLogin()" type="submit" class="btn btn-success active ">employee Login</button>
           <a class="text-center" (click)="signup()" routerLink="signup">Register a new membership</a>
         </p>        
        
