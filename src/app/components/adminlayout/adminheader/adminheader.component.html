@@ -192,7 +192,7 @@
           </a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isAdmin()">
           <a href="pages/widgets.html" class="nav-link" routerLink="addemp">
             <i class="nav-icon fas fa-file" style="color: white;"></i>
             <p style="color: white;">
@@ -202,7 +202,7 @@
         </li>
 
 
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isAdmin()">
           <a href="pages/widgets.html" class="nav-link" routerLink="show">
             <i class="nav-icon fas fa-database" style="color: white;"></i>
             <p style="color: white;">
@@ -249,19 +249,18 @@
             </li>
           </ul>
         </li>
-
+        
         <li class="nav-item">
           <a routerLink="empmanage" class="nav-link">
             <i class="nav-icon fas fa-edit" style="color: white;"></i>
             <p style="color: white;">
-              Employee Management
+              Employee Management 
 
             </p>
           </a>
-
         </li>
-
-        <li class="nav-item">
+      
+        <li class="nav-item" *ngIf="isAdmin()">
           <a class="nav-link">
             <i class="nav-icon fas fa-file" style="color: white;"></i>
             <p style="color: white;">Employee Tracker</p>

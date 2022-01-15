@@ -1,87 +1,67 @@
-<!-- Button to open the modal login form -->
-<button onclick="document.getElementById('id01').style.display='block'" class="btn btn-info">Login</button>
+<div class="" style="background-image: url(/assets/images/aaaa.jpg); width: 1340px; ">
 
-<div>
-  <img style="width: 1340px; " src="/assets/images/aaaa.jpg" />
-</div>
 
-<div id="id01" class="modal" style="height: 600px; " >
 
-  <form class="modal-content animate col-lg-8" action="/action_page.php" method="post" [formGroup]="formGroup"
-    (ngSubmit)="onSubmit()" style="width: 500px;  ">
-    
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close"
-        title="Close Modal">&times;</span>
-      <img src="/assets/images/icon.png" >
-      <h3>User Login</h3>
-    </div>
-
-    <div class="container" style="width: 500px; ">
-      <label for="uname"><b>Username</b></label>
-      <div class="input-group mb-3">
-        <input type="email" class="form-control" name="email" id="email" formControlName="email" placeholder="Enter Your Email">
-                
+    <form class=" modal-content animate " [formGroup]="formGroup" style="width: 500px;   ">
+      <div class="imgcontainer">
+        <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close"
+          title="Close Modal">&times;</span> -->
+        <img src="/assets/images/icon.png">
+        <h3>Login</h3>
       </div>
-      <div *ngIf="submitted && f['email'].errors">
-        <div class="error text-danger">
-          Invalid user email or Password
+
+      <div class="container" style="width: 500px; ">
+        <label for="uname"><b>Email</b></label>
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" name="email" id="email" formControlName="email"
+            placeholder="Enter Your Email">
+
         </div>
-      </div>
-
-
-      <label for="psw"><b>Password</b></label>
-      <div class="input-group mb-3">
-        <input type="password" class="form-control" placeholder="Enter Your Password" id="password" name="password"
-          formControlName="password">        
-          
-      </div>
-      <div *ngIf="submitted && f['password'].errors">
-        <div class="error text-danger">
-          Invalid user email or Password
+        <div *ngIf="submitted && f['email'].errors">
+          <div class="error text-danger">
+            Invalid user email or Password
+          </div>
         </div>
-      </div> 
-      <div class="social-auth-links text-center mt-2 mb-3">     
-        <p class="mb-0">
-          <button type="submit" class="btn btn-success active ">Login</button>
+
+
+        <label for="psw"><b>Password</b></label>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Enter Your Password" id="password" name="password"
+            formControlName="password">
+
+        </div>
+        <div *ngIf="submitted && f['password'].errors">
+          <div class="error text-danger">
+            Invalid user email or Password
+          </div>
+        </div>
+        <div class="text-center ">
+          <button (click)="adminLogin()" type="submit" class="btn btn-primary">Admin Login</button>
+          <button (click)="employeeLogin()" type="submit" class="btn btn-secondary ">Employee Login</button>
           <a class="text-center" (click)="signup()" routerLink="signup">Register a new membership</a>
-        </p>        
-       
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
       </div>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
 
-    <div class="container" style="background-color:#ebe8e8; height: 90px;" >
-      <button type="button" onclick="document.getElementById('id01').style.display='none'"
-        class="cancelbtn">Cancel</button>     
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
+      <div class="container" style="background-color:#ebe8e8; height: 90px;">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+          class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
+  
 
-<script>
-  // Get the modal
-  var modal = document.getElementById('id01');
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
 
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
     }
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </script>
+</div>

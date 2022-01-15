@@ -14,7 +14,7 @@ import { EmployeehomeComponent } from './components/employee/employeehome/employ
 
 const routes: Routes = [
   
-  {path:'', component:LoginComponent},
+  {path:'login', component:LoginComponent},
 
 
 
@@ -25,7 +25,7 @@ const routes: Routes = [
 
 
 
-  {path:'admin' , component:AdminlayoutComponent, canActivateChild: [AuthGuard], children:[
+  {path:'' , component:AdminlayoutComponent, canActivateChild: [AuthGuard], children:[
     {path:'dash', component: DashbordComponent},
     {path:'', component: DashbordComponent},
     {path : "addemp" , component:EmployeeAddComponent},

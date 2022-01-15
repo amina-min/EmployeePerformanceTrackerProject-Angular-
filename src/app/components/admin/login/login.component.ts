@@ -35,21 +35,38 @@ export class LoginComponent implements OnInit {
   }
 
 
-  onSubmit(){
+  adminLogin(){
     this.submitted = true;
-   this.loginService.login(this.formGroup.value)
+   this.loginService.adminLogin(this.formGroup.value)
    .subscribe(res => {
-    this.storageService.saveLoginInfo(res.data);
+    this.storageService.saveLoginInfo(res.data, "admin");
     // this.toastr.success("Login Success")
-    this.route.navigate(['admin']);
+    this.route.navigate(['']);
    }, err => {
      console.log(err);
-     this.route.navigate(['']);
-     this.toastr.error("invalid email or password")
+     this.route.navigate(['/login']);
+     this.toastr.error("invalid email or password")    
+   
+   })
+  }
+  
+
+
+  employeeLogin(){
+    this.submitted = true;
+   this.loginService.employeeLogin(this.formGroup.value)
+   .subscribe(res => {
+    this.storageService.saveLoginInfo(res.data, "employee");    
+    this.route.navigate(['']);
+   }, err => {
+     console.log(err);
+     this.route.navigate(['/login']);
+     this.toastr.error("Email or password invalid")
+
    })
   }
 
-  signup(){  
+  signup(): void{  
     this.route.navigateByUrl("signup")
 
   }

@@ -22,6 +22,7 @@ import { EmployeelayoutComponent } from './components/employee/employeelayout/em
 import { EmployeeheaderComponent } from './components/employee/employeelayout/employeeheader/employeeheader.component';
 import { EmployeefooterComponent } from './components/employee/employeelayout/employeefooter/employeefooter.component';
 import { EmployeehomeComponent } from './components/employee/employeehome/employeehome.component';
+import { EmployeeloginComponent } from './components/employee/employeelogin/employeelogin.component';
 
 
 @NgModule({
@@ -41,6 +42,8 @@ import { EmployeehomeComponent } from './components/employee/employeehome/employ
     EmployeeheaderComponent,
     EmployeefooterComponent,
     EmployeehomeComponent,
+    EmployeeloginComponent,
+    
   
   ],
   imports: [

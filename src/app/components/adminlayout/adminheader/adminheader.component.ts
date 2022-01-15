@@ -17,7 +17,14 @@ export class AdminheaderComponent implements OnInit {
 
   logout(){
     this.service.logout();
-    this.router.navigateByUrl("");
+    this.router.navigateByUrl("/login");
+  }
+
+
+  isAdmin(){
+  let admin =  this.service.isAdmin();
+  console.log(admin);
+  return admin;
   }
   
 }
