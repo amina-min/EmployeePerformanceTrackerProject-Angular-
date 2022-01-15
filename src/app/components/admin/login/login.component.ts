@@ -40,12 +40,12 @@ export class LoginComponent implements OnInit {
    this.loginService.login(this.formGroup.value)
    .subscribe(res => {
     this.storageService.saveLoginInfo(res.data);
-    this.toastr.success("Login Success")
+    // this.toastr.success("Login Success")
     this.route.navigate(['admin']);
    }, err => {
      console.log(err);
      this.route.navigate(['']);
-     this.toastr.error("Email or password invalid")
+     this.toastr.error("invalid email or password")
    })
   }
 
