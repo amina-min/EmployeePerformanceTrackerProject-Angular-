@@ -1,0 +1,86 @@
+<div class="content-wrapper">
+    <div class="container" >
+      <div class="row justify-content-center">
+        <div class="col-md-12 mt-5" >
+    
+          <div style="  text-align: center;">
+            <h3><b>Employee Performance Review Evaluation Table With Ratings</b></h3>
+          <table class="table  table-bordered table-sm" style="background-color: skyblue;   height:auto ;">
+            <thead class="thead" >
+              <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>                
+                <th >Department</th>
+                <th>Designation</th>
+
+                <th>UnderstandingScore</th>
+                <th>TrainingScore</th>
+                <th>EquiSoftHandleScore</th>
+                <th>RulsPolicyFolloScore</th>
+                <th>KnoledgeShareWithCoworkersScore</th>
+                <th>JobKnoledgeComment</th>
+
+                
+                <th>CoworkersTreatedRespectScore</th>
+                <th>AcceptsCriticismScore</th>
+                <th>TeamPlayerScore</th>
+                <th>TeameResourcesShareScore</th>
+                <th>ExecutesTaskScore</th>
+                <th>TeamworkComment</th>
+
+                <th>AcceptsMistakeScore</th>
+                <th>CanWorkWithoutSuperviseScore</th>
+                <th>CapableTakingAnyDecisionScore</th>
+                <th>HighPressureSiruationManageScore</th>
+                <th>MotivateCoworkersToFinishScore</th>
+                <th>LeadershipComment</th>
+
+                <th>IsEligibleForPromotion</th>
+                <th>IsEligibleForTermination</th>
+                <th>ExtraComments</th>
+               
+
+              </tr>
+            </thead>
+            <tbody >
+              <tr *ngFor="let employee of Employees; index as i;">
+                <td>{{employee.id}}</td>
+                <td>{{employee.firstname}}</td>
+                <td>{{employee.lastname}}</td>                
+                <td >{{employee.department}}</td>
+                <td>{{employee.designation}}</td>
+
+                <td>{{employee.requirUnderstandingScore}}</td>
+                <td>{{employee.regardingTrainingScore}}</td>
+                <td>{{employee.equiSoftHandleScore}}</td>
+                <td>{{employee.rulsPolicyFolloScore}}</td>
+                <td>{{employee.knoledgeShareWithCoworkersScore}}</td>
+                <td>{{employee.jobKnoledgeComment}}</td>
+
+                <td>{{employee.coworkersTreatedRespectScore}}</td>
+                <td>{{employee.acceptsCriticismScore}}</td>
+                <td>{{employee.teamPlayerScore}}</td>
+                <td>{{employee.teameResourcesShareScore}}</td>
+                <td>{{employee.executesTaskScore}}</td>
+                <td>{{employee.teamworkComment}}</td>
+
+                <td>{{employee.acceptsMistakeScore}}</td>
+                <td>{{employee.canWorkWithoutSuperviseScore}}</td>
+                <td>{{employee.capableTakingAnyDecisionScore}}</td>
+                <td>{{employee.highPressureSiruationManageScore}}</td>
+                <td>{{employee.motivateCoworkersToFinishScore}}</td>
+                <td>{{employee.leadershipComment}}</td>
+
+                <td>{{employee.isEligibleForPromotion}}</td>
+                <td>{{employee.isEligibleForTermination}}</td>
+                <td>{{employee.extraComments}}</td>
+                
+              </tr>
+            </tbody>
+    
+          </table>
+        </div>
+      </div>
+    </div>
+    </div>

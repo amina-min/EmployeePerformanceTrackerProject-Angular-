@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   formGroup: FormGroup;
   submitted = false;
   constructor(private fb: FormBuilder, private loginService: LoginService, private storageService: StorageService,
-    private route: Router, private toastr:ToastrService) {
+    private route: Router, private toastr: ToastrService) {
     this.formGroup = this.fb.group(
       {
         email: ['', [Validators.required]],
@@ -35,39 +35,44 @@ export class LoginComponent implements OnInit {
   }
 
 
-  adminLogin(){
+  adminLogin() {
     this.submitted = true;
-   this.loginService.adminLogin(this.formGroup.value)
-   .subscribe(res => {
-    this.storageService.saveLoginInfo(res.data, "admin");
-    // this.toastr.success("Login Success")
-    this.route.navigate(['']);
-   }, err => {
-     console.log(err);
-     this.route.navigate(['/login']);
-     this.toastr.error("invalid email or password")    
-   
-   })
-  }
-  
+    this.loginService.adminLogin(this.formGroup.value)
+      .subscribe(res => {
+        this.storageService.saveLoginInfo(res.data, "admin");
+        // this.toastr.success("Login Success")
+        this.route.navigate(['']);
+      }, err => {
+        console.log(err);
+        this.toastr.error("invalid email or password")
+        this.route.navigate(['/login']);
 
-
-  employeeLogin(){
-    this.submitted = true;
-   this.loginService.employeeLogin(this.formGroup.value)
-   .subscribe(res => {
-    this.storageService.saveLoginInfo(res.data, "employee");    
-    this.route.navigate(['']);
-   }, err => {
-     console.log(err);
-     this.route.navigate(['/login']);
-     this.toastr.error("Email or password invalid")
-
-   })
+      })
   }
 
-  signup(): void{  
+  employeeLogin() {
+    console.log(this.formGroup.value);
+
+    this.submitted = true;
+    this.loginService.employeeLogin(this.formGroup.value)
+      .subscribe(res => {
+        this.storageService.saveLoginInfo(res.data, "employee");
+        this.route.navigate(['']);
+      }, err => {
+        console.log(err);
+        this.toastr.error("Email or password invalid")
+        this.route.navigate(['/login']);
+
+
+      })
+  }
+
+  signup(): void {
     this.route.navigateByUrl("signup")
 
+  }
+
+  empsignup(): void {
+    this.route.navigateByUrl("empsignup")
   }
 }

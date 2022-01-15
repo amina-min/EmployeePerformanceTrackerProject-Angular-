@@ -214,7 +214,7 @@
 
 
 
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isAdmin()">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-chart-pie" style="color: white;"></i>
             <p style="color: white;">
@@ -249,21 +249,21 @@
             </li>
           </ul>
         </li>
-        
+
         <li class="nav-item">
           <a routerLink="empmanage" class="nav-link">
             <i class="nav-icon fas fa-edit" style="color: white;"></i>
             <p style="color: white;">
-              Employee Management 
+              Employee Tracker
 
             </p>
           </a>
         </li>
-      
+
         <li class="nav-item" *ngIf="isAdmin()">
-          <a class="nav-link">
+          <a  routerLink="empperform"class="nav-link">
             <i class="nav-icon fas fa-file" style="color: white;"></i>
-            <p style="color: white;">Employee Tracker</p>
+            <p style="color: white;">Employee Performance </p>
           </a>
         </li>
 

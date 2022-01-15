@@ -18,11 +18,10 @@ import { EmpmanageComponent } from './components/admin/empmanage/empmanage.compo
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { EmployeelayoutComponent } from './components/employee/employeelayout/employeelayout.component';
-import { EmployeeheaderComponent } from './components/employee/employeelayout/employeeheader/employeeheader.component';
-import { EmployeefooterComponent } from './components/employee/employeelayout/employeefooter/employeefooter.component';
+
 import { EmployeehomeComponent } from './components/employee/employeehome/employeehome.component';
-import { EmployeeloginComponent } from './components/employee/employeelogin/employeelogin.component';
+import { EmployeesignupComponent } from './components/employee/employeesignup/employeesignup.component';
+import { EmployeePerformanceComponent } from './components/admin/employee-performance/employee-performance.component';
 
 
 @NgModule({
@@ -37,12 +36,9 @@ import { EmployeeloginComponent } from './components/employee/employeelogin/empl
     EmployeeAddComponent,
     HomeComponent,
     ShowemployeeComponent,
-    EmpmanageComponent,
-    EmployeelayoutComponent,
-    EmployeeheaderComponent,
-    EmployeefooterComponent,
-    EmployeehomeComponent,
-    EmployeeloginComponent,
+    EmpmanageComponent,   
+    EmployeehomeComponent, EmployeesignupComponent, EmployeePerformanceComponent,
+    
     
   
   ],

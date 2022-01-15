@@ -28,8 +28,7 @@ export class StorageService {
   getUserType() {
     let userType = ""
     try {
-      let userType = localStorage.getItem("usertype")
-     
+      let userType = localStorage.getItem("usertype")     
       return userType;
     } catch (e) {
       return userType;
@@ -45,6 +44,9 @@ export class StorageService {
       return false;
     }
   }
+
+
+
 
 
   isLoggedIn() {

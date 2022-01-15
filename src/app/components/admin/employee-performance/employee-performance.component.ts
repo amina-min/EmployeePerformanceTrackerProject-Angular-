@@ -1,0 +1,32 @@
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { EmployeeRatings } from '../empmanage/empmanageModel';
+
+@Component({
+  selector: 'app-employee-performance',
+  templateUrl: './employee-performance.component.html',
+  styleUrls: ['./employee-performance.component.css']
+})
+export class EmployeePerformanceComponent implements OnInit {
+  employee: EmployeeRatings = new EmployeeRatings();
+  constructor(private http: HttpClient, private router: Router,private toastr:ToastrService) {
+    this.showEmployeePerformance();
+  }
+  Employees: any ;
+  isShowTable: boolean = false;
+  isSave: boolean = true;
+
+  ngOnInit(): void {
+  }
+
+  showEmployeePerformance() {    
+    const headers = { 'content-Type': 'application/json' };
+    this.http.get<any>('http://localhost:9090/employeeInformation/getAll', { headers: headers }).subscribe(map => {
+      console.log(map.Data);
+      this.Employees = map.Data;
+    })
+  }
+
+}

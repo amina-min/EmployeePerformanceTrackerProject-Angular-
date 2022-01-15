@@ -9,20 +9,14 @@ import { SignupComponent } from './components/admin/signup/signup.component';
 import { AdminlayoutComponent } from './components/adminlayout/adminlayout.component';
 import { AuthGuard } from './guards/auth.guard';
 import { EmpmanageComponent } from './components/admin/empmanage/empmanage.component';
-import { EmployeelayoutComponent } from './components/employee/employeelayout/employeelayout.component';
+
 import { EmployeehomeComponent } from './components/employee/employeehome/employeehome.component';
+import { EmployeesignupComponent } from './components/employee/employeesignup/employeesignup.component';
+import { EmployeePerformanceComponent } from './components/admin/employee-performance/employee-performance.component';
 
 const routes: Routes = [
   
   {path:'login', component:LoginComponent},
-
-
-
-  {path:"emp" , component:EmployeelayoutComponent, children:[
-    {path:'emphome', component: EmployeehomeComponent},
-    {path:'', component: EmployeehomeComponent},
-  ]},
-
 
 
   {path:'' , component:AdminlayoutComponent, canActivateChild: [AuthGuard], children:[
@@ -31,10 +25,12 @@ const routes: Routes = [
     {path : "addemp" , component:EmployeeAddComponent},
     {path : "home" , component:HomeComponent},
     {path : "show" , component:ShowemployeeComponent},
-    {path : "empmanage" , component:EmpmanageComponent}
+    {path : "empmanage" , component:EmpmanageComponent},
+    {path : "empperform" , component:EmployeePerformanceComponent}
 
   ]},
   {path: 'signup', component: SignupComponent},  
+  {path: 'empsignup', component: EmployeesignupComponent},  
 ];
 
 @NgModule({
