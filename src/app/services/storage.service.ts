@@ -23,8 +23,6 @@ export class StorageService {
     }
 
   }
-
-
   getUserType() {
     let userType = ""
     try {
@@ -35,7 +33,6 @@ export class StorageService {
     }
   }
 
-
   isAdmin() {
     console.log(this.getUserType());
     if (this.getUserType() == "admin") {
@@ -44,11 +41,6 @@ export class StorageService {
       return false;
     }
   }
-
-
-
-
-
   isLoggedIn() {
     try {
       let isLoggedinStr = localStorage.getItem("isLoggedIn") || false

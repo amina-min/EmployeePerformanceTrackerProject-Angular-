@@ -29,4 +29,27 @@ export class EmployeePerformanceComponent implements OnInit {
     })
   }
 
+  getRank(employee:any){
+    let rank =employee.acceptsCriticismScore
+              +employee.regardingTrainingScore
+              +employee.equiSoftHandleScore
+              +employee.rulsPolicyFolloScore
+              +employee.knoledgeShareWithCoworkersScore
+
+              +employee.coworkersTreatedRespectScore
+              +employee.acceptsCriticismScore
+              +employee.teamPlayerScore
+              +employee.teameResourcesShareScore
+              +employee.executesTaskScore
+              
+              +employee.acceptsMistakeScore
+              +employee.canWorkWithoutSuperviseScore
+              +employee.capableTakingAnyDecisionScore
+              +employee.highPressureSiruationManageScore
+              +employee.motivateCoworkersToFinishScore
+
+
+              return rank;
+  }
+
 }
