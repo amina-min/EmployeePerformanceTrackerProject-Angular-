@@ -14,7 +14,7 @@ export class EmployeePerformanceComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router,private toastr:ToastrService) {
     this.showEmployeePerformance();
   }
-  Employees: any ;
+  Employees: EmployeeRatings[] = [] ;
   isShowTable: boolean = false;
   isSave: boolean = true;
 
@@ -26,7 +26,22 @@ export class EmployeePerformanceComponent implements OnInit {
     this.http.get<any>('http://localhost:9090/employeeInformation/getAll', { headers: headers }).subscribe(map => {
       console.log(map.Data);
       this.Employees = map.Data;
+      
+          this.Employees.forEach(emp => {
+      emp.rank = this.getRank(emp)
+      console.log("foreach called");
+      
+    });
+
+    this.Employees.sort((first,second)=>{
+      return second.rank - first.rank
     })
+    })
+
+
+
+
+
   }
 
   getRank(employee:any){

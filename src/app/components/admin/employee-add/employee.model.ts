@@ -9,6 +9,7 @@ export class Employee{
     date_of_birth:Date =new Date("");
     nationality:string ="";
     employeementHistory:string ="";
+    
    
 
     constructor(){

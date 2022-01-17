@@ -29,6 +29,7 @@ export class EmployeeRatings{
     isEligibleForPromotion:string= "";
     isEligibleForTermination:string= "";
     extraComments:string ="";
+    rank = 0
     
     
     constructor(){}
