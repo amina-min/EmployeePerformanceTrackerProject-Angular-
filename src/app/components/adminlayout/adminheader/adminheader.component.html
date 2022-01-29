@@ -7,27 +7,11 @@
       <a class="nav-link" data-widget="pushmenu" href="#" role="button" style="color: white;"><i
           class="fas fa-bars"></i></a>
     </li>
+   
 
-    <li class="nav-item">
-      <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-        <i class="fas fa-search"></i>
-      </a>
-      <div class="navbar-search-block">
-        <form class="form-outline">
-          <div class="input-group input-group-sm">
-            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-            <div class="input-group-append">
-              <button class="btn btn-navbar" type="submit">
-                <i class="fas fa-search"></i>
-              </button>
-              <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </li>
+    <div class="text mt-2" style=" font-weight: bold;color:  #e8f5f8">
+      <h4>Employee Performance Tracker</h4>
+    </div>
 
 
   </ul>
@@ -127,6 +111,23 @@
         <i class="fas fa-expand-arrows-alt"></i>
       </a>
     </li>
+    <!-- <li class="form-inline d-flex justify-content-center md-form form-sm active-purple-2 mt-2">     
+      <div class="navbar-search">
+        <form class="form-outline">
+          <div class="input-group input-group-sm">
+            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-navbar" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+              <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </li> -->
     <li class="nav-item d-none d-sm-inline-block">
       <a (click)="logout()" class="nav-link  btn btn-danger Activity" routerLink=""
         style="color: gray; background-color: white;"><b>Logout</b> </a>
@@ -146,14 +147,10 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
-    <div class=" mt-2 pb-6   d-flex">
+    <div class=" mt-2 pb-10 ">
       <div class="image">
         <img src="assets/images/time.png" class="img-circle elevation-2" alt="User Image">
       </div>
-      <div class="text" style=" font-weight: bold;color:  #035368">
-        <h4>Employee Performance Tracker</h4>
-      </div>
-
     </div>
     <!-- SidebarSearch Form -->
     <!-- <div class="form-inline">
@@ -261,9 +258,16 @@
         </li>
 
         <li class="nav-item" *ngIf="isAdmin()">
-          <a  routerLink="empperform"class="nav-link">
+          <a routerLink="empperform" class="nav-link">
             <i class="nav-icon fas fa-file" style="color: #035368;"></i>
             <p style="color: #035368;">Employee Performance </p>
+          </a>
+        </li>
+
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a routerLink="pdf" class="nav-link">
+            <i class="nav-icon fas fa-file" style="color: #035368;"></i>
+            <p style="color: #035368;">Report </p>
           </a>
         </li>
 

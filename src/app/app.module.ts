@@ -22,6 +22,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { EmployeehomeComponent } from './components/employee/employeehome/employeehome.component';
 import { EmployeesignupComponent } from './components/employee/employeesignup/employeesignup.component';
 import { EmployeePerformanceComponent } from './components/admin/employee-performance/employee-performance.component';
+import { ReportpdfComponent } from './components/admin/reportpdf/reportpdf.component';
 
 
 @NgModule({
@@ -36,11 +37,14 @@ import { EmployeePerformanceComponent } from './components/admin/employee-perfor
     EmployeeAddComponent,
     HomeComponent,
     ShowemployeeComponent,
-    EmpmanageComponent,   
-    EmployeehomeComponent, EmployeesignupComponent, EmployeePerformanceComponent,
-    
-    
-  
+    EmpmanageComponent,
+    EmployeehomeComponent,
+    EmployeesignupComponent,
+    EmployeePerformanceComponent, 
+    ReportpdfComponent,
+
+
+
   ],
   imports: [
     BrowserModule,

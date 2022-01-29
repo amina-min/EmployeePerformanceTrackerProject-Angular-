@@ -13,6 +13,7 @@ import { EmpmanageComponent } from './components/admin/empmanage/empmanage.compo
 import { EmployeehomeComponent } from './components/employee/employeehome/employeehome.component';
 import { EmployeesignupComponent } from './components/employee/employeesignup/employeesignup.component';
 import { EmployeePerformanceComponent } from './components/admin/employee-performance/employee-performance.component';
+import { ReportpdfComponent } from './components/admin/reportpdf/reportpdf.component';
 
 const routes: Routes = [
   
@@ -26,7 +27,8 @@ const routes: Routes = [
     {path : "home" , component:HomeComponent},
     {path : "show" , component:ShowemployeeComponent},
     {path : "empmanage" , component:EmpmanageComponent},
-    {path : "empperform" , component:EmployeePerformanceComponent}
+    {path : "empperform" , component:EmployeePerformanceComponent},
+    {path : "pdf", component:ReportpdfComponent}
 
   ]},
   {path: 'signup', component: SignupComponent},  
