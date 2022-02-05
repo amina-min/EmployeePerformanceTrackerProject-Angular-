@@ -9,17 +9,36 @@
     </li>
    
 
-    <div class="text mt-2" style=" font-weight: bold;color:  #e8f5f8">
-      <h4>Employee Performance Tracker</h4>
-    </div>
-
 
   </ul>
+
+  
+
+
+  <div class="text ml-5 " style=" font-weight: bold;color:  #e8f5f8">
+    <h4>Employee Performance Tracker</h4>
+  </div>
 
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
     <!-- Navbar Search -->
-
+    <li class="row mt-2   mr-3" >     
+      <div class="navbar-search col-md-12 ">
+        <form class="form-outline">
+          <div class="input-group input-group-sm">
+            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-navbar " type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+              <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                <i class=""></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </li> 
 
     <!-- Messages Dropdown Menu -->
     <li class="nav-item dropdown">
@@ -111,29 +130,21 @@
         <i class="fas fa-expand-arrows-alt"></i>
       </a>
     </li>
-    <!-- <li class="form-inline d-flex justify-content-center md-form form-sm active-purple-2 mt-2">     
-      <div class="navbar-search">
-        <form class="form-outline">
-          <div class="input-group input-group-sm">
-            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-            <div class="input-group-append">
-              <button class="btn btn-navbar" type="submit">
-                <i class="fas fa-search"></i>
-              </button>
-              <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </li> -->
+
+
+    
+ 
+
+  
+
     <li class="nav-item d-none d-sm-inline-block">
       <a (click)="logout()" class="nav-link  btn btn-danger Activity" routerLink=""
         style="color: gray; background-color: white;"><b>Logout</b> </a>
       <span class=""></span>
     </li>
   </ul>
+
+
 </nav>
 <!-- /.navbar -->
 
@@ -149,7 +160,7 @@
     <!-- Sidebar user panel (optional) -->
     <div class=" mt-2 pb-10 ">
       <div class="image">
-        <img src="assets/images/time.png" class="img-circle elevation-2" alt="User Image">
+        <img src="assets/images/time.png" class=" elevation-2" height="120" width="130" alt="User Image">
       </div>
     </div>
     <!-- SidebarSearch Form -->

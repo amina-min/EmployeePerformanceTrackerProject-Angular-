@@ -43,6 +43,7 @@ export class EmployeePerformanceComponent implements OnInit {
 
 
   }
+  
 
   getRank(employee:any){
     let rank =employee.acceptsCriticismScore
