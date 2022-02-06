@@ -4,3 +4,7 @@
 }
 
 
+.active, .nav-link:hover {
+    background-color: whitesmoke;
+    color: white;
+  }
