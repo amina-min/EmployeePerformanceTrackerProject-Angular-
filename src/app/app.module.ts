@@ -23,6 +23,8 @@ import { EmployeehomeComponent } from './components/employee/employeehome/employ
 import { EmployeesignupComponent } from './components/employee/employeesignup/employeesignup.component';
 import { EmployeePerformanceComponent } from './components/admin/employee-performance/employee-performance.component';
 import { ReportpdfComponent } from './components/admin/reportpdf/reportpdf.component';
+import { RatingchartComponent } from './components/admin/ratingchart/ratingchart.component';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 
 @NgModule({
@@ -41,7 +43,7 @@ import { ReportpdfComponent } from './components/admin/reportpdf/reportpdf.compo
     EmployeehomeComponent,
     EmployeesignupComponent,
     EmployeePerformanceComponent, 
-    ReportpdfComponent,
+    ReportpdfComponent, RatingchartComponent,
 
 
 
@@ -54,7 +56,17 @@ import { ReportpdfComponent } from './components/admin/reportpdf/reportpdf.compo
     FormsModule,
     CommonModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    
+      NgxEchartsModule.forRoot({
+        /**
+         * This will import all modules from echarts.
+         * If you only need custom modules,
+         * please refer to [Custom Build] section.
+         */
+        echarts: () => import('echarts'), // or import('./path-to-my-custom-echarts')
+      }),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

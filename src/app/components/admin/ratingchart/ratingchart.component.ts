@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { EChartsOption } from 'echarts';
+import { EChartsCoreOption, EChartsOption } from 'echarts';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-ratingchart',
+  templateUrl: './ratingchart.component.html',
+  styleUrls: ['./ratingchart.component.css']
 })
-export class HomeComponent implements OnInit {
+export class RatingchartComponent implements OnInit {
+
+  constructor() { }
 
   option: EChartsOption = {
     xAxis: {
@@ -19,33 +21,27 @@ export class HomeComponent implements OnInit {
     series: [
       {
         data: [
-          450,
+          350,
           {
-            value: 1000,
+            value: 500,
             itemStyle: {
               color: '#a90000'
             }
           },
-          900,
-          700,
+          500,
+          350,
           100,
-          600,
-          770,
-          110,
-          900
+          300,
+          350,
+          200,
+          470
         ],
         type: 'bar'
       }
     ]
   };
 
-  constructor() { }
-
   ngOnInit(): void {
   }
-
-
-  
-  
 
 }

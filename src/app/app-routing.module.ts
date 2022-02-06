@@ -14,6 +14,7 @@ import { EmployeehomeComponent } from './components/employee/employeehome/employ
 import { EmployeesignupComponent } from './components/employee/employeesignup/employeesignup.component';
 import { EmployeePerformanceComponent } from './components/admin/employee-performance/employee-performance.component';
 import { ReportpdfComponent } from './components/admin/reportpdf/reportpdf.component';
+import { RatingchartComponent } from './components/admin/ratingchart/ratingchart.component';
 
 const routes: Routes = [
   
@@ -28,7 +29,9 @@ const routes: Routes = [
     {path : "show" , component:ShowemployeeComponent},
     {path : "empmanage" , component:EmpmanageComponent},
     {path : "empperform" , component:EmployeePerformanceComponent},
-    {path : "pdf", component:ReportpdfComponent}
+    {path : "pdf", component:ReportpdfComponent},
+    {path : "chart", component:RatingchartComponent}
+    
 
   ]},
   {path: 'signup', component: SignupComponent},  
