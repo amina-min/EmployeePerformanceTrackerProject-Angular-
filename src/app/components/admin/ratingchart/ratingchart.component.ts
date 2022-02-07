@@ -13,7 +13,7 @@ export class RatingchartComponent implements OnInit {
   option: EChartsOption = {
     xAxis: {
       type: 'category',
-      data: ['Amina', 'Nayeem', 'Khalil', 'Mehdi', 'Rakib', 'Rabu', 'Bodrul']
+      data: ['thamina', 'thaayeem', 'Med', 'Rakib', 'rabbi', 'badrool', 'Cat', 'Rat']
     },
     yAxis: {
       type: 'value'
@@ -28,12 +28,10 @@ export class RatingchartComponent implements OnInit {
               color: '#a90000'
             }
           },
-          500,
-          350,
-          100,
+          400,
+          450,         
           300,
-          350,
-          200,
+          350,       
           470
         ],
         type: 'bar'
