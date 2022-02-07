@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { EChartsCoreOption, EChartsOption } from 'echarts';
+import { EmployeeRatings } from '../empmanage/empmanageModel';
 
 @Component({
   selector: 'app-ratingchart',
@@ -7,39 +9,90 @@ import { EChartsCoreOption, EChartsOption } from 'echarts';
   styleUrls: ['./ratingchart.component.css']
 })
 export class RatingchartComponent implements OnInit {
+  Employees: EmployeeRatings[] = [];
+  nameList: string[] = [];
+  rankList: object[] = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   option: EChartsOption = {
     xAxis: {
       type: 'category',
-      data: ['thamina', 'thaayeem', 'Med', 'Rakib', 'rabbi', 'badrool', 'Cat', 'Rat']
+      data: this.nameList
     },
     yAxis: {
       type: 'value'
     },
     series: [
       {
-        data: [
-          350,
-          {
-            value: 500,
-            itemStyle: {
-              color: '#a90000'
-            }
-          },
-          400,
-          450,         
-          300,
-          350,       
-          470
-        ],
+        data: this.rankList,
         type: 'bar'
       }
     ]
   };
 
   ngOnInit(): void {
+    this.showEmployeePerformance();
+
+  }
+
+
+  showEmployeePerformance() {
+    const headers = { 'content-Type': 'application/json' };
+    this.http.get<any>('http://localhost:9090/employeeInformation/getAll', { headers: headers }).subscribe(map => {
+      console.log(map.Data);
+      this.Employees = map.Data;
+      this.Employees.forEach(emp => {
+
+
+
+        emp.rank = this.getRank(emp)
+        this.nameList.push(emp.firstname);
+
+        if(emp.rank>50){
+          this.rankList.push(
+            {
+              value:emp.rank,
+              itemStyle: {
+                color: '#a90000'
+              }
+
+            }
+            );
+        }else {
+          this.rankList.push({value:emp.rank});
+        }
+
+
+       
+
+        console.log("foreach called");
+      });
+    })
+
+  }
+
+
+  getRank(employee: any) {
+    let rank = employee.acceptsCriticismScore
+      + employee.regardingTrainingScore
+      + employee.equiSoftHandleScore
+      + employee.rulsPolicyFolloScore
+      + employee.knoledgeShareWithCoworkersScore
+
+      + employee.coworkersTreatedRespectScore
+      + employee.acceptsCriticismScore
+      + employee.teamPlayerScore
+      + employee.teameResourcesShareScore
+      + employee.executesTaskScore
+
+      + employee.acceptsMistakeScore
+      + employee.canWorkWithoutSuperviseScore
+      + employee.capableTakingAnyDecisionScore
+      + employee.highPressureSiruationManageScore
+      + employee.motivateCoworkersToFinishScore
+
+    return rank;
   }
 
 }

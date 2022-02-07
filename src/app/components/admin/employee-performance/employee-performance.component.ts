@@ -11,31 +11,31 @@ import { EmployeeRatings } from '../empmanage/empmanageModel';
 })
 export class EmployeePerformanceComponent implements OnInit {
   employee: EmployeeRatings = new EmployeeRatings();
-  constructor(private http: HttpClient, private router: Router,private toastr:ToastrService) {
+  constructor(private http: HttpClient, private router: Router, private toastr: ToastrService) {
     this.showEmployeePerformance();
   }
-  Employees: EmployeeRatings[] = [] ;
+  Employees: EmployeeRatings[] = [];
   isShowTable: boolean = false;
   isSave: boolean = true;
 
   ngOnInit(): void {
   }
 
-  showEmployeePerformance() {    
+  showEmployeePerformance() {
     const headers = { 'content-Type': 'application/json' };
     this.http.get<any>('http://localhost:9090/employeeInformation/getAll', { headers: headers }).subscribe(map => {
       console.log(map.Data);
       this.Employees = map.Data;
-      
-          this.Employees.forEach(emp => {
-      emp.rank = this.getRank(emp)
-      console.log("foreach called");
-      
-    });
 
-    this.Employees.sort((first,second)=>{
-      return second.rank - first.rank
-    })
+      this.Employees.forEach(emp => {
+        emp.rank = this.getRank(emp)
+        console.log("foreach called");
+
+      });
+
+      this.Employees.sort((first, second) => {
+        return second.rank - first.rank
+      })
     })
 
 
@@ -43,29 +43,29 @@ export class EmployeePerformanceComponent implements OnInit {
 
 
   }
-  
-
-  getRank(employee:any){
-    let rank =employee.acceptsCriticismScore
-              +employee.regardingTrainingScore
-              +employee.equiSoftHandleScore
-              +employee.rulsPolicyFolloScore
-              +employee.knoledgeShareWithCoworkersScore
-
-              +employee.coworkersTreatedRespectScore
-              +employee.acceptsCriticismScore
-              +employee.teamPlayerScore
-              +employee.teameResourcesShareScore
-              +employee.executesTaskScore
-              
-              +employee.acceptsMistakeScore
-              +employee.canWorkWithoutSuperviseScore
-              +employee.capableTakingAnyDecisionScore
-              +employee.highPressureSiruationManageScore
-              +employee.motivateCoworkersToFinishScore
 
 
-              return rank;
+  getRank(employee: any) {
+    let rank = employee.acceptsCriticismScore
+      + employee.regardingTrainingScore
+      + employee.equiSoftHandleScore
+      + employee.rulsPolicyFolloScore
+      + employee.knoledgeShareWithCoworkersScore
+
+      + employee.coworkersTreatedRespectScore
+      + employee.acceptsCriticismScore
+      + employee.teamPlayerScore
+      + employee.teameResourcesShareScore
+      + employee.executesTaskScore
+
+      + employee.acceptsMistakeScore
+      + employee.canWorkWithoutSuperviseScore
+      + employee.capableTakingAnyDecisionScore
+      + employee.highPressureSiruationManageScore
+      + employee.motivateCoworkersToFinishScore
+
+
+    return rank;
   }
 
 }

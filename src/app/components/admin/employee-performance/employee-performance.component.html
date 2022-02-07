@@ -1,18 +1,22 @@
-<div class="content-wrapper" >
-    <div class="container-fluid" >
-      <div class="row justify-content-center">
-        <div class="col-md-12 elevation-3 " >
-          
-          <div style="  text-align: center; background-color: rgb(141, 151, 161)" >
-            <h3 ><b>Employee Performance Review Evaluation Table With Ratings</b></h3>
-            
-          <table class="table sortable table-striped table-bordered table-sm " style="background-color:rgb(189, 188, 188); color:whitesmoke;   height:auto ; border: 1px solid black;">
-            
-            <thead class="  thead fs-6"  style="background-color: rgb(0, 71, 143) ; ">
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-12 elevation-3 ">
+
+        <div style="  text-align: center; background-color: rgb(141, 151, 161)">
+
+          <div  class="px-5">
+            <h3><b>Employee Performance Review Evaluation Table With Ratings</b></h3>
+          </div>        
+
+          <table class="table sortable table-striped table-bordered table-sm "
+            style="background-color:rgb(189, 188, 188); color:whitesmoke;   height:auto ; border: 1px solid black;">
+
+            <thead class="  thead fs-6" style="background-color: rgb(0, 71, 143) ; ">
               <tr>
                 <th title="id">Id</th>
                 <th title="Firstname">Firstname</th>
-                <th title="Lastname">Lastname</th>                
+                <th title="Lastname">Lastname</th>
                 <th title="Department">Department</th>
                 <th title="Designation">Designation</th>
                 <th class="th-sm sortable">Ranking</th>
@@ -24,7 +28,7 @@
                 <th title="Knoledge Share With Coworkers Score">KSWCSC</th>
                 <th title="Job Knoledge Comment">JKCommet</th>
 
-                
+
                 <th title="Coworkers Treated Respect Score">CTRSC</th>
                 <th title="Accepts Criticism Score">ACSC</th>
                 <th title="Team Player Score">TPSC</th>
@@ -41,7 +45,7 @@
 
                 <th title="Is Eligible For Promotion">IsEForP</th>
                 <th title="Is Eligible For Termination">IsEForT</th>
-                <th title="Extra Comments">EComments</th>              
+                <th title="Extra Comments">EComments</th>
 
               </tr>
             </thead>
@@ -49,8 +53,8 @@
               <tr *ngFor="let employee of Employees; index as i;">
                 <td>{{employee.id}}</td>
                 <td>{{employee.firstname}}</td>
-                <td>{{employee.lastname}}</td>                
-                <td >{{employee.department}}</td>
+                <td>{{employee.lastname}}</td>
+                <td>{{employee.department}}</td>
                 <td>{{employee.designation}}</td>
                 <!-- <td class="sortable" style="background-color: lightsteelblue;">{{getRank(employee)}}</td> -->
                 <td style="background-color: lightsteelblue;">{{employee.rank}}</td>
@@ -79,12 +83,12 @@
                 <td>{{employee.isEligibleForPromotion}}</td>
                 <td>{{employee.isEligibleForTermination}}</td>
                 <td>{{employee.extraComments}}</td>
-                
+
               </tr>
             </tbody>
-    
+
           </table>
         </div>
       </div>
     </div>
-    </div>
+  </div>
