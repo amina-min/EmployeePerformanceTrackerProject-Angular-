@@ -13,7 +13,9 @@ export class RatingchartComponent implements OnInit {
   nameList: string[] = [];
   rankList: object[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.showEmployeePerformance();
+   }
 
   option: EChartsOption = {
     xAxis: {
@@ -32,7 +34,7 @@ export class RatingchartComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.showEmployeePerformance();
+  
 
   }
 
@@ -43,9 +45,6 @@ export class RatingchartComponent implements OnInit {
       console.log(map.Data);
       this.Employees = map.Data;
       this.Employees.forEach(emp => {
-
-
-
         emp.rank = this.getRank(emp)
         this.nameList.push(emp.firstname);
 
@@ -56,16 +55,21 @@ export class RatingchartComponent implements OnInit {
               itemStyle: {
                 color: '#a90000'
               }
-
             }
             );
+        }else if(emp.rank>40){
+          this.rankList.push(
+            {
+              value:emp.rank,
+              itemStyle: {
+                color: '#3498DB'
+              }
+            }
+            );
+
         }else {
           this.rankList.push({value:emp.rank});
         }
-
-
-       
-
         console.log("foreach called");
       });
     })
