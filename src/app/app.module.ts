@@ -26,6 +26,9 @@ import { ReportpdfComponent } from './components/admin/reportpdf/reportpdf.compo
 import { RatingchartComponent } from './components/admin/ratingchart/ratingchart.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 
+import { ChartsComponent } from './components/admin/charts/charts.component';
+import { PerformanceChartComponent } from './components/admin/performance-chart/performance-chart.component';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +46,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
     EmployeehomeComponent,
     EmployeesignupComponent,
     EmployeePerformanceComponent, 
-    ReportpdfComponent, RatingchartComponent,
+    ReportpdfComponent, RatingchartComponent, ChartsComponent, PerformanceChartComponent,
 
 
 
@@ -58,6 +61,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
     
+   
       NgxEchartsModule.forRoot({
         /**
          * This will import all modules from echarts.

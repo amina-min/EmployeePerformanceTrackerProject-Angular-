@@ -1,38 +1,31 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { EChartsCoreOption, EChartsOption } from 'echarts';
 import { EmployeeRatings } from '../empmanage/empmanageModel';
+import { EChartsCoreOption, EChartsOption } from 'echarts';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-ratingchart',
-  templateUrl: './ratingchart.component.html',
-  styleUrls: ['./ratingchart.component.css']
+  selector: 'app-performance-chart',
+  templateUrl: './performance-chart.component.html',
+  styleUrls: ['./performance-chart.component.css']
 })
-export class RatingchartComponent implements OnInit {
+export class PerformanceChartComponent implements OnInit {
   Employees: EmployeeRatings[] = [];
+  vg = 0;
+  g = 0;
+  avg = 0;
+  bavg = 0;
+  option: any
+
   nameList: string[] = [];
   rankList: object[] = [];
-
   constructor(private http: HttpClient) {
-    this.showEmployeePerformance();
+
+
   }
 
-  option: EChartsOption = {
-    xAxis: {
-      type: 'category',
-      data: this.nameList
-    },
-    yAxis: {
-      type: 'value'
-    },
-    series: [
-      {
-        data: this.rankList,
-        type: 'bar'
-      }
-    ]
-  };
+
   ngOnInit(): void {
+    this.showEmployeePerformance();
 
 
   }
@@ -45,51 +38,68 @@ export class RatingchartComponent implements OnInit {
       this.Employees = map.Data;
       this.Employees.forEach(emp => {
         emp.rank = this.getRank(emp)
-        this.nameList.push(emp.firstname);
 
         if (emp.rank > 50) {
-          this.rankList.push(
-            {
-              value: emp.rank,
-              itemStyle: {
-                color: '#1F618D'
-              }
-            }
-          );
+          this.vg++
         } else if (emp.rank > 40) {
-          this.rankList.push(
-            {
-              value: emp.rank,
-              itemStyle: {
-                color: '#90E04E'
-              }
-            }
-          );
+          this.g++
+
 
         } else if (emp.rank > 30) {
-          this.rankList.push(
-            {
-              value: emp.rank,
-              itemStyle: {
-                color: '#F1C40F'
-              }
-            }
-          );
-
+          this.avg++
         } else {
-          this.rankList.push({
-            value: emp.rank,
-            itemStyle: {
-              color: '#EC7063'
-            }
-
-          });
+          this.bavg++
         }
         console.log("foreach called");
       });
-    })
 
+
+      this.generateChart();
+
+    })
   }
+  generateChart() {
+    this.option = {
+      legend: {},
+      tooltip: {
+        trigger: 'axis',
+        showContent: false
+      },
+      dataset: {
+        source: [
+          ['name', 'count'],
+          ['very Good', this.vg],
+          ['Good', this.g],
+          ['average', this.avg],
+          ['below average', this.bavg]
+
+        ]
+      },
+      xAxis: { type: 'category' },
+      yAxis: { gridIndex: 0 },
+      grid: { top: '55%' },
+      series: [
+        {
+          type: 'pie',
+          id: 'pie',
+          radius: '30%',
+          center: ['50%', '25%'],
+          emphasis: {
+            focus: 'self'
+          },
+          label: {
+            formatter: '{b}: {@count}  ({d}%)'
+          },
+          encode: {
+            itemName: 'name',
+            value: 'count',
+            tooltip: 'count'
+          }
+        }
+      ]
+    };
+  }
+
 
 
   getRank(employee: any) {
@@ -113,5 +123,14 @@ export class RatingchartComponent implements OnInit {
 
     return rank;
   }
+
+
+
+
+
+
+
+
+
 
 }

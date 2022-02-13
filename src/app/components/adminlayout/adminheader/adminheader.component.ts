@@ -23,7 +23,7 @@ export class AdminheaderComponent implements OnInit {
 
   isAdmin(){
   let admin =  this.service.isAdmin();
-  console.log(admin);
+  
   return admin;
   }
   
