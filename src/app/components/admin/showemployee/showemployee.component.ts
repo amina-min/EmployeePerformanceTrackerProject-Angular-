@@ -32,8 +32,8 @@ export class ShowemployeeComponent implements OnInit {
   loadEmployee() {    
     const headers = { 'content-Type': 'application/json' };
     this.http.get<any>('http://localhost:9090/employee/getAll', { headers: headers }).subscribe(map => {
-      console.log(map.Data);
-      this.Employees = map.Data;
+      console.log(map.data);
+      this.Employees = map.data;
     })
   }
 
